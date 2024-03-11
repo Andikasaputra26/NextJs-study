@@ -10,8 +10,16 @@ const Navbar = () => {
       {/* <Link className={styles.navbar} href="/product">
         Product
       </Link> */}
-      <div>
+      <div className="flex gap-2 items-center">
+        {data && data.user.image && (
+          <img
+            className="w-10 h-10 rounded-full"
+            src={data.user.image}
+            alt={data.user.fullname}
+          />
+        )}
         {data && data.user.fullname}
+
         {data ? (
           <button className={styles.button} onClick={() => signOut()}>
             Sign Out
